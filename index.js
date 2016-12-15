@@ -11,8 +11,8 @@ app.use(function(error, request, response, next) {
 	}
 });
 
-app.post('/', function(request, response) {
-		var data = request.body;
+app.post('/', function(req, res) {
+		var data = req.body;
 		var response = new Array();
 		for (var i = 0; i < data['take']; i++) {
 			var show = data['payload'][i];
@@ -24,7 +24,7 @@ app.post('/', function(request, response) {
 				});
 			}
 		}
-		response.send(JSON.stringify({'response': response}));
+		res.send(JSON.stringify({'response': response}));
 });
 
 app.listen(process.env.PORT || 5000);
