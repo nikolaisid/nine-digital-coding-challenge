@@ -24,7 +24,7 @@ app.post('/', function(req, res) {
 				});
 			}
 		}
-		res.json({'response': response})).send();
+		res.json({'response': response}).send();
 });
 
 app.listen(process.env.PORT || 5000);
