@@ -4,9 +4,9 @@ var app = express();
 app.post('/', function(request, response) {	
 	var data = JSON.parse(request, function(err) {
 		if (err) {
-			response.send(JSON.stringify({
-				'error': 'Could not decode request: JSON parsing failed'
-			}));
+			response.status(400).send( {
+				error: 'Could not decode request: JSON parsing failed'
+			});
 		}
 		else {
 			var response = new Array();
@@ -20,7 +20,7 @@ app.post('/', function(request, response) {
 					});
 				}
 			}
-			response.end(JSON.stringify({'response': response}));
+			response.send(JSON.stringify({'response': response}));
 		}
 	}
 });
