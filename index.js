@@ -4,9 +4,9 @@ var app = express();
 app.post('/', function(request, response) {	
 	var data = JSON.parse(request, function(err) {
 		if (err) {
-			response.status(400).send( {
+			response.status(400).json( {
 				error: 'Could not decode request: JSON parsing failed'
-			});
+			}).send();
 		}
 		else {
 			var response = new Array();
