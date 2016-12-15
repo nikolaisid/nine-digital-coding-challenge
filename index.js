@@ -28,12 +28,3 @@ app.post('/', function(req, res) {
 });
 
 app.listen(process.env.PORT || 5000);
-
-function IsValidJSON(data) {
-	try {
-		JSON.parse(data);
-	} catch (error) {
-		return false;
-	}
-	return true;
-}
