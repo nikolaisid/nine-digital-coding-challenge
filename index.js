@@ -22,7 +22,7 @@ app.post('/', function(request, response) {
 			}
 			response.send(JSON.stringify({'response': response}));
 		}
-	}
+	});
 });
 
 var server = app.listen(80, function() {});
