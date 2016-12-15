@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 
 app.post('/', function(request, response) {	
-	var data = JSON.parse(request, function(err) {
+	var data = JSON.parse(request.json, function(err) {
 		if (err) {
 			response.status(400).json( {
 				error: 'Could not decode request: JSON parsing failed'
