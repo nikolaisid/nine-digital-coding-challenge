@@ -3,9 +3,9 @@ var app = express();
 var bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
-app.use(function(error, request, response, next) {
-	if (error instanceof SyntaxError) {
-		response.status(400).json( {
+app.use(function(err, req, res, next) {
+	if (err instanceof SyntaxError) {
+		res.status(400).json( {
 			error: 'Could not decode request: JSON parsing failed'
 		}).send();
 	}
@@ -24,7 +24,7 @@ app.post('/', function(req, res) {
 				});
 			}
 		}
-		res.send(JSON.stringify({'response': response}));
+		res.json({'response': response})).send();
 });
 
 app.listen(process.env.PORT || 5000);
