@@ -1,0 +1,22 @@
+{
+  "name": "nine-digital-coding-challenge",
+  "version": "1.0.0",
+  "description": "9 Digital Coding Challenge",
+  "engines": {
+    "node": "5.9.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "ejs": "2.4.1",
+    "express": "4.13.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/nine-digital-coding-challenge"
+  },
+  "author": "Nikolai Sidorov",
+  "license": "ISC"
+}
