@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
 
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 
 app.post('/', function(request, response) {	
 	var data = JSON.parse(request.body, function(err) {
