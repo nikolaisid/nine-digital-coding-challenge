@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 
+app.use(express.bodyParser());
+
 app.post('/', function(request, response) {	
-	var data = JSON.parse(request.json, function(err) {
+	var data = JSON.parse(request.body, function(err) {
 		if (err) {
 			response.status(400).json( {
 				error: 'Could not decode request: JSON parsing failed'
@@ -25,4 +27,4 @@ app.post('/', function(request, response) {
 	});
 });
 
-var server = app.listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);
