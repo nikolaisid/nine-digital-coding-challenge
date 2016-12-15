@@ -20,7 +20,7 @@ app.post('/', function(request, response) {
 					});
 				}
 			}
-			response.send(JSON.stringify({'response': response}));
+			response.end(JSON.stringify({'response': response}));
 		}
 	}
 });
